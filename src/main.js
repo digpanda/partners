@@ -17,6 +17,8 @@ import {
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 
+import VueMeta from 'vue-meta'
+
 Vue.use(Vuetify, {
   components: {
     VApp,
@@ -30,6 +32,8 @@ Vue.use(Vuetify, {
     transitions
   }
 })
+// VueMeta
+Vue.use(VueMeta)
 
 Vue.config.productionTip = false
 
