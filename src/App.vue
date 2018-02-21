@@ -23,7 +23,7 @@
 
     <!-- Content -->
     <v-content>
-      <router-view/>
+      <connect-routing />
     </v-content>
 
     <!-- Footer -->
@@ -62,3 +62,7 @@ export default {
 
 }
 </script>
+
+<style lang="scss">
+   @import 'assets/scss/main.scss'
+</style>
