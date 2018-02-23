@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import ConnectRouting from '@/components/ConnectRouting'
+
 export default {
   data () {
     return {
@@ -58,6 +60,10 @@ export default {
       { rel: 'stylesheet', href: '' },
       { rel: 'icon', href: '/static/images/icons/favicon.png', type: 'image/png' }
     ]
+  },
+
+  components: {
+    ConnectRouting
   }
 
 }

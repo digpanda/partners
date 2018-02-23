@@ -3,6 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
+
+import _ from 'lodash'
+
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import VueMeta from 'vue-meta'
+
 import {
   Vuetify,
   VApp,
@@ -17,7 +25,18 @@ import {
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 
-import VueMeta from 'vue-meta'
+// Axios configuration
+Vue.prototype.$axios = axios
+Vue.use(VueAxios, axios)
+
+console.log('Environment : ' + process.env.NODE_ENV)
+console.log('Api : ' + process.env.API)
+
+// Api end point
+Vue.axios.defaults.baseURL = process.env.API
+
+// VueMeta
+Vue.use(VueMeta)
 
 Vue.use(Vuetify, {
   components: {
@@ -32,8 +51,6 @@ Vue.use(Vuetify, {
     transitions
   }
 })
-// VueMeta
-Vue.use(VueMeta)
 
 Vue.config.productionTip = false
 
@@ -41,6 +58,22 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+
+  created () {
+    axios.interceptors.request.use((config) => {
+      /**
+       * if the token isn't already present we add it up to the system
+       * we also keep the other data by merging the objects
+       */
+      config.params = _.merge({token: this.$store.getters.getUserToken}, config.params)
+      return config
+    })
+
+    // axios.interceptors.response.use((response) => {
+    //   return response
+    // })
+  }
 })
