@@ -15,7 +15,7 @@ export default {
 
   methods: {
     connectWechat () {
-      this.$store.dispatch('authenticateWechatUser', { code: 'customer1@customer.com' })
+      this.$store.dispatch('authenticateWechatUser', { code: 'guide@guide.com' })
     }
   },
 

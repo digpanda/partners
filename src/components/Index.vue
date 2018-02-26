@@ -1,9 +1,12 @@
 <template>
+  <div>
+
   <v-container fluid>
     <div v-if="currentUser">
       Welcome {{currentUser.email}}
     </div>
   </v-container>
+</div>
 </template>
 
 <style scoped>

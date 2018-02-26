@@ -1,6 +1,7 @@
 <template>
   <v-app>
 
+
     <!-- Navigation drawer -->
     <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app>
       <v-list>
