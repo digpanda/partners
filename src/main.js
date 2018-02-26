@@ -10,6 +10,7 @@ import _ from 'lodash'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueMeta from 'vue-meta'
+import VueNoty from 'vuejs-noty'
 
 import {
   Vuetify,
@@ -22,6 +23,7 @@ import {
   VGrid,
   VToolbar,
   VAlert,
+  VDataTable,
   transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
@@ -29,6 +31,14 @@ import '../node_modules/vuetify/src/stylus/app.styl'
 // Axios configuration
 Vue.prototype.$axios = axios
 Vue.use(VueAxios, axios)
+
+// NotyJS
+Vue.use(VueNoty, {
+  theme: 'mint',
+  timeout: 1000,
+  progressBar: true,
+  layout: 'topRight'
+})
 
 console.log('Environment : ' + process.env.NODE_ENV)
 console.log('Api : ' + process.env.API)
@@ -50,6 +60,7 @@ Vue.use(Vuetify, {
     VGrid,
     VToolbar,
     VAlert,
+    VDataTable,
     transitions
   }
 })

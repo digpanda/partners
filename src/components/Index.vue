@@ -1,18 +1,19 @@
 <template>
-  <div>
+  <div class="index">
+    <v-container fluid>
+      <h2>Service Rates</h2>
+      <services-rates />
 
-  <v-container fluid>
-    <div v-if="currentUser">
-      Welcome {{currentUser.email}}
-    </div>
-  </v-container>
-</div>
+      <h2>Brands Rates</h2>
+      <brands-rates />
+    </v-container>
+  </div>
 </template>
 
-<style scoped>
-</style>
 
 <script>
+import BrandsRates from '@/components/BrandsRates'
+import ServicesRates from '@/components/ServicesRates'
 
 export default {
   data () {
@@ -26,12 +27,11 @@ export default {
   },
 
   computed: {
-    currentUser () {
-      return this.$store.getters.getCurrentUser
-    }
   },
 
   components: {
+    BrandsRates,
+    ServicesRates
   }
 
 }
