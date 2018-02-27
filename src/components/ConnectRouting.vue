@@ -1,7 +1,7 @@
 <template>
-  <div v-if="currentUser.token">
-    <router-view/>
-  </div>
+    <div v-if="currentUser.token">
+      <router-view/>
+    </div>
 </template>
 
 <script>
