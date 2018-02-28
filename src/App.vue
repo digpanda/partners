@@ -3,14 +3,33 @@
     <!-- Navigation drawer -->
     <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app>
       <v-list>
-        <v-list-tile value="true" v-for="(item, i) in items" :key="i">
+
+        <!-- Home -->
+        <v-list-tile :to="{ name: 'Index' }">
           <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
+            <v-icon class="icon-home"></v-icon>
           </v-list-tile-action>
+
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+            <v-list-tile-title>
+              Home
+            </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
+        <!-- Provision Rates -->
+        <v-list-tile :to="{ name: 'ProvisionRates' }">
+          <v-list-tile-action>
+            <v-icon class="icon-trophy"></v-icon>
+          </v-list-tile-action>
+
+          <v-list-tile-content>
+            <v-list-tile-title>
+              Provision Rates
+            </v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
       </v-list>
     </v-navigation-drawer>
 
@@ -54,9 +73,6 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [{
-        title: `Menu`
-      }],
       miniVariant: false,
       right: true,
       rightDrawer: false,
@@ -69,7 +85,7 @@ export default {
   metaInfo: {
     title: 'DigPanda Partners',
     link: [
-      { rel: 'stylesheet', href: '' },
+      { rel: 'stylesheet', href: 'https://file.myfontastic.com/Ub5VubwXxvzzGJsNC3Am6D/icons.css' },
       { rel: 'icon', href: '/static/images/icons/favicon.png', type: 'image/png' }
     ]
   },
