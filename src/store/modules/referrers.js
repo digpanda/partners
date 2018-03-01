@@ -5,7 +5,8 @@ import EventBus from '@/misc/EventBus'
 // initial state
 const state = {
   servicesRates: [],
-  brandsRates: []
+  brandsRates: [],
+  groupInsight: []
 }
 
 // keep a copy to unset
@@ -15,7 +16,8 @@ const state = {
 const getters = {
   // we don't use the state for this specific entry so we keep the user throughout pages
   getServicesRates: (state) => state.servicesRates,
-  getBrandsRates: (state) => state.brandsRates
+  getBrandsRates: (state) => state.brandsRates,
+  getGroupInsight: (state) => state.groupInsight
 }
 
 // actions
