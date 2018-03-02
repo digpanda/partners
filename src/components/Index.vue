@@ -2,11 +2,10 @@
   <!-- <v-container fluid> -->
   <div class="index">
     <v-flex xs12 sm12>
+
       <v-list three-line>
 
         <template>
-
-          <v-divider :inset="false" :key="index"></v-divider>
 
           <v-list-tile :key="`group-insight`" @click="goGroupInsight()">
 
@@ -21,7 +20,6 @@
 
           </v-list-tile>
 
-          <v-divider :inset="false" :key="index"></v-divider>
 
           <v-list-tile :key="`provision-rates`" @click="goProvisionRates()">
 

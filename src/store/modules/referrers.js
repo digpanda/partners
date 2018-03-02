@@ -22,6 +22,16 @@ const getters = {
 
 // actions
 const actions = {
+  async fetchGroupInsight (context, params) {
+    try {
+      let response = await axios.get(`customer/referrer/group_insight`, {params: params})
+      context.commit('setGroupInsight', response.data)
+      console.log('the group insight was set.')
+    } catch (error) {
+      EventBus.$emit('errorEvent', error.response.data)
+    }
+  },
+
   async fetchServicesRates (context, params) {
     try {
       let response = await axios.get(`customer/referrer/services_rates`, {params: params})
@@ -45,6 +55,9 @@ const actions = {
 
 // mutations
 const mutations = {
+  setGroupInsight (state, groupInsight) {
+    state.groupInsight = groupInsight
+  },
   setServicesRates (state, servicesRates) {
     state.servicesRates = servicesRates
   },
