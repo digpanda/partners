@@ -2,35 +2,7 @@
   <v-app>
     <!-- Navigation drawer -->
     <v-navigation-drawer persistent :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" enable-resize-watcher fixed app>
-      <v-list>
-
-        <!-- Home -->
-        <v-list-tile :to="{ name: 'Index' }">
-          <v-list-tile-action>
-            <v-icon class="icon-home"></v-icon>
-          </v-list-tile-action>
-
-          <v-list-tile-content>
-            <v-list-tile-title>
-              Home
-            </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <!-- Provision Rates -->
-        <v-list-tile :to="{ name: 'ProvisionRates' }">
-          <v-list-tile-action>
-            <v-icon class="icon-trophy"></v-icon>
-          </v-list-tile-action>
-
-          <v-list-tile-content>
-            <v-list-tile-title>
-              Provision Rates
-            </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-      </v-list>
+      <left-menu />
     </v-navigation-drawer>
 
     <!-- Header toolbar -->
@@ -66,6 +38,7 @@
 
 <script>
 import ConnectRouting from '@/components/ConnectRouting'
+import LeftMenu from '@/components/LeftMenu'
 
 export default {
   data () {
@@ -97,6 +70,7 @@ export default {
   },
 
   components: {
+    LeftMenu,
     ConnectRouting
   }
 

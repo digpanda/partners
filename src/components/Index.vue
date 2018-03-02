@@ -7,15 +7,15 @@
 
         <template>
 
-          <v-list-tile :key="`group-insight`" @click="goGroupInsight()">
+          <v-list-tile :key="`insight`" @click="goInsight()">
 
             <v-list-tile-avatar>
-              <span class="index-icon icon-trophy"></span>
+              <span class="index-icon icon-insight"></span>
             </v-list-tile-avatar>
 
             <v-list-tile-content>
-              <v-list-tile-title v-html="`Group Insight`"></v-list-tile-title>
-              <v-list-tile-sub-title v-html="`This is the group insight section`"></v-list-tile-sub-title>
+              <v-list-tile-title v-html="`Insight`"></v-list-tile-title>
+              <v-list-tile-sub-title v-html="`This is the insight section`"></v-list-tile-sub-title>
             </v-list-tile-content>
 
           </v-list-tile>
@@ -54,8 +54,8 @@ export default {
   },
 
   methods: {
-    goGroupInsight () {
-      router.push('group-insight')
+    goInsight () {
+      router.push('insight')
     },
     goProvisionRates () {
       router.push('provision-rates')
