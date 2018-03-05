@@ -41,6 +41,19 @@
         </v-list-tile-content>
       </v-list-tile>
 
+      <!-- Share -->
+      <v-list-tile :to="{ name: 'Share' }">
+        <v-list-tile-action>
+          <v-icon class="icon-share"></v-icon>
+        </v-list-tile-action>
+
+        <v-list-tile-content>
+          <v-list-tile-title>
+            Share
+          </v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+
     </v-list>
   </div>
 </template>

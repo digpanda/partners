@@ -20,7 +20,6 @@
 
           </v-list-tile>
 
-
           <v-list-tile :key="`provision-rates`" @click="goProvisionRates()">
 
             <v-list-tile-avatar>
@@ -28,8 +27,21 @@
             </v-list-tile-avatar>
 
             <v-list-tile-content>
-              <v-list-tile-title v-html="`导购奖金率`"></v-list-tile-title>
+              <v-list-tile-title v-html="`Provision Rates`"></v-list-tile-title>
               <v-list-tile-sub-title v-html="`This is the provision rate section`"></v-list-tile-sub-title>
+            </v-list-tile-content>
+
+          </v-list-tile>
+
+          <v-list-tile :key="`share`" @click="goShare()">
+
+            <v-list-tile-avatar>
+              <span class="index-icon icon-share"></span>
+            </v-list-tile-avatar>
+
+            <v-list-tile-content>
+              <v-list-tile-title v-html="`Share`"></v-list-tile-title>
+              <v-list-tile-sub-title v-html="`This is the share section`"></v-list-tile-sub-title>
             </v-list-tile-content>
 
           </v-list-tile>
@@ -59,6 +71,9 @@ export default {
     },
     goProvisionRates () {
       router.push('provision-rates')
+    },
+    goShare () {
+      router.push('share')
     }
   },
 

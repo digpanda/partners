@@ -7,7 +7,8 @@ const state = {
   servicesRates: [],
   brandsRates: [],
   groupInsight: [],
-  childrenInsight: []
+  childrenInsight: [],
+  qrcode: null
 }
 
 // keep a copy to unset
@@ -19,11 +20,21 @@ const getters = {
   getServicesRates: (state) => state.servicesRates,
   getBrandsRates: (state) => state.brandsRates,
   getGroupInsight: (state) => state.groupInsight,
-  getChildrenInsight: (state) => state.childrenInsight
+  getChildrenInsight: (state) => state.childrenInsight,
+  getQrcode: (state) => state.qrcode
 }
 
 // actions
 const actions = {
+  async fetchQrcode (context, params) {
+    try {
+      let response = await axios.get(`customer/referrer/qrcode`, {params: params})
+      context.commit('setQrcode', response.data.url)
+      console.log('the qrcode was set.')
+    } catch (error) {
+      EventBus.$emit('errorEvent', error.response.data)
+    }
+  },
   async fetchGroupInsight (context, params) {
     try {
       let response = await axios.get(`customer/referrer/group_insight`, {params: params})
@@ -67,6 +78,9 @@ const actions = {
 
 // mutations
 const mutations = {
+  setQrcode (state, qrcode) {
+    state.qrcode = qrcode
+  },
   setGroupInsight (state, groupInsight) {
     state.groupInsight = groupInsight
   },
