@@ -1,8 +1,11 @@
 'use strict'
 
 const merge = require('webpack-merge')
-const devEnv = require('./dev.env')
+const prodEnv = require('./prod.env')
 
-module.exports = merge(devEnv, {
-  NODE_ENV: '"testing"'
+module.exports = merge(prodEnv, {
+  NODE_ENV: '"testing"',
+  PORT: '8080',
+  HOST: '"localhost"',
+  API: '"http://localhost:3000/api"'
 })
