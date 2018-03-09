@@ -40,6 +40,7 @@ const actions = {
       let response = await axios.get(`customer/referrer/group_insight`, {params: params})
       context.commit('setGroupInsight', response.data)
       console.log('the group insight was set.')
+      console.log(response.data)
     } catch (error) {
       EventBus.$emit('errorEvent', error.response.data)
     }
