@@ -1,4 +1,4 @@
 module.exports = {
   NODE_ENV: '"production"',
-  API: '"https://www.germanyintheboxdev.com/api"'
+  API: '"https://www.germanyinthebox.com/api"'
 }
