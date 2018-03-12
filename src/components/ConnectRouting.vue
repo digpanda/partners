@@ -1,7 +1,14 @@
 <template>
+  <div v-if="error">
+    <div class="crash-error">
+      <span class="icon-warning"></span> {{error}}
+    </div>
+  </div>
+  <div v-else>
     <div v-if="currentUser.token">
       <router-view/>
     </div>
+  </div>
 </template>
 
 <script>
@@ -9,7 +16,9 @@ import EventBus from '@/misc/EventBus'
 
 export default {
   data () {
-    return {}
+    return {
+      error: null
+    }
   },
 
   created () {
@@ -34,6 +43,8 @@ export default {
     EventBus.$on('crashEvent', error => {
       if (error.message === 'Network Error') {
         this.error = 'Oh snap ! There is a network error, please refresh the page.'
+      } else {
+        this.error = error
       }
     })
 
