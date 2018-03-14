@@ -6,7 +6,6 @@
   </div>
   <div v-else>
     <div v-if="currentUser.token">
-      {{currentUser.token}}
       <router-view/>
     </div>
   </div>
